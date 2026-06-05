@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Shizuoka Trip 2026</title>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/201/201623.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="shizuoka.css">
+</head>
+<body class="text-slate-800 bg-slate-50">
+
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md px-6 py-4 flex justify-between items-center border-b border-slate-100">
+        <h1 id="page-title" class="text-xl font-bold tracking-tight text-slate-900 uppercase">Plan</h1>
+        <div class="text-xs font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
+            JPY/TWD: <span id="rate-display">0.215</span>
+        </div>
+    </header>
+
+    <main class="max-w-md mx-auto px-5 pt-4">
+
+        <section id="plan" class="tab-content active">
+            <div class="mb-8 flight-card text-white p-6 rounded-[24px] shadow-xl relative overflow-hidden">
+                <div class="flex justify-between items-center mb-6 relative z-10">
+                    <span class="text-[10px] font-bold opacity-60 uppercase tracking-[0.2em]">Flight Ticket</span>
+                    <i class="fas fa-plane text-blue-400"></i>
+                </div>
+                <div class="mb-6 relative z-10">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-3xl font-bold tracking-tighter">TPE</p>
+                            <p class="text-[10px] opacity-60">13:30 NH852</p>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center px-4 mb-2">
+                            <p class="text-[10px] font-bold mb-1 text-blue-300">ANA</p>
+                            <div class="w-full h-[1px] bg-white/20 relative">
+                                <div class="absolute right-0 -top-1 border-t-4 border-l-4 border-transparent border-l-blue-400"></div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-3xl font-bold tracking-tighter">HND</p>
+                            <p class="text-[10px] opacity-60">17:45 羽田</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pt-6 border-t border-white/10 relative z-10 opacity-80">
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-3xl font-bold tracking-tighter">HND</p>
+                            <p class="text-[10px] opacity-60">13:20 NH853</p>
+                        </div>
+                        <div class="flex-1 flex flex-col items-center px-4 mb-2">
+                            <p class="text-[10px] font-bold mb-1 text-orange-300">ANA</p>
+                            <div class="w-full h-[1px] bg-white/20 relative">
+                                <div class="absolute right-0 -top-1 border-t-4 border-l-4 border-transparent border-l-orange-400"></div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-3xl font-bold tracking-tighter">TPE</p>
+                            <p class="text-[10px] opacity-60">15:50 台北</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex items-center gap-3 bg-white/10 p-3 rounded-xl border border-white/5">
+                    <i class="fas fa-bed text-blue-300"></i>
+                    <p class="text-[11px] font-light">品川 → 靜岡 → 橫濱</p>
+                </div>
+            </div>
+
+            <div class="relative pl-8 timeline-line space-y-8">
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/12 <span class="text-slate-400 text-xs ml-1">(Wed)</span></h3>
+                    <div class="card p-4 mt-2 space-y-2 text-sm">
+                        <p>• <b>(交通TBA)</b> [機場] → [品川]</p>
+                        <p>• 台場</p>
+                        <p>• TBA</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/13 <span class="text-slate-400 text-xs ml-1">(Thu)</span></h3>
+                    <div class="card p-4 mt-2 space-y-2 text-sm">
+                        <p>• <b>新幹線</b> [品川] → [靜岡]（光芒號 14:10 / 15:02 抵達）</p>
+                        <p>• 靜岡車站</p>
+                     </div>
+                </div>
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-orange-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/14 <span class="text-slate-400 text-xs ml-1">(Fri)</span></h3>
+                    <div class="card p-4 mt-2 border-l-4 border-orange-500 space-y-2 text-sm">
+                        <p>• 田貫湖</p>
+                        <p>• 白絲瀑布</p>
+                        <p>• 富士宮</p>
+                        <p>• 富士山遺產中心</p>
+                        <p class="text-[11px] text-slate-400 font-bold">※ 自駕</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/15 <span class="text-slate-400 text-xs ml-1">(Sat)</span></h3>
+                    <div class="card p-4 mt-2 space-y-2 text-sm">
+                        <p>• 清水港・魚市場</p>
+                        <p>• S-Pulse Dream Plaza</p>
+                        <p>• 小丸子樂園</p>
+                        <p>• 三保之松原</p>
+                        <p class="text-[11px] text-slate-400 font-bold">※ 大眾交通</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/16 <span class="text-slate-400 text-xs ml-1">(Sun)</span></h3>
+                    <div class="card p-4 mt-2 space-y-2 text-sm">
+                        <p>• <b>新幹線</b> [靜岡] → [新橫濱]</p>
+                        <p>• <b>JR 橫濱線</b> [新橫濱] → [櫻木町]</p>
+                        <p>• 靜岡車站模型店</p>
+                     </div>
+                </div>
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/17 <span class="text-slate-400 text-xs ml-1">(Mon)</span></h3>
+                    <div class="card p-4 mt-2 space-y-2 text-sm">
+                        <p>• TBA</p>
+                        <p>• TBA</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="absolute -left-[25px] w-4 h-4 rounded-full bg-blue-500 border-4 border-white shadow-sm"></div>
+                    <h3 class="font-bold text-lg">8/18 <span class="text-slate-400 text-xs ml-1">(Tue)</span></h3>
+                    <div class="card p-4 mt-2 space-y-2 text-sm">
+                        <p class="text-orange-600 font-bold">• HH:MM 前往羽田機場</p>
+                 </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="transport" class="tab-content">
+            <div class="space-y-4">
+                <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day1">
+                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 台北 → 羽田 → 品川</h3>
+                    <p class="text-xs text-slate-500">[ANA] NH852 TPE 13:30 → HND 17:45（第1→第2航廈）</p>
+                    <p class="text-xs text-slate-500 mt-1">[市區] 品川 → 台場</p>
+                </div>
+                <div class="card p-4 border-l-4 border-blue-400 cursor-pointer" data-day="day2">
+                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13): 品川 → 靜岡</h3>
+                    <p class="text-xs text-slate-500">[新幹線] 東海道新幹線 光芒號 Hikari（約 52 分）</p>
+                    <p class="text-xs text-slate-500">[品川] → [靜岡] 14:10 發 / 15:02 抵</p>
+                    <div class="mt-2 flex justify-end">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openRailMap(event)">
+                            <i class="fas fa-route"></i>
+                            <span>JR 時刻表</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4 border-l-4 border-orange-400 cursor-pointer" data-day="day3">
+                    <h3 class="font-bold text-sm mb-1">Day 3 (8/14): 富士周邊（自駕）</h3>
+                    <p class="text-xs text-slate-500">田貫湖 / 白絲瀑布 / 富士宮 / 富士山遺產中心</p>
+                </div>
+                <div class="card p-4 border-l-4 border-yellow-400 cursor-pointer" data-day="day4">
+                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 清水・三保（大眾交通）</h3>
+                    <p class="text-xs text-slate-500">清水港・魚市場 / S-Pulse Dream Plaza / 小丸子樂園 / 三保之松原</p>
+                    <div class="mt-2 flex justify-end">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openMetroMap(event)">
+                            <i class="fas fa-subway"></i>
+                            <span>靜鐵路線圖</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4 border-l-4 border-blue-400 cursor-pointer" data-day="day5">
+                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16): 靜岡 → 橫濱</h3>
+                    <p class="text-xs text-slate-500">[新幹線] [靜岡] → [新橫濱站]</p>
+                    <p class="text-xs text-slate-500">[JR] 橫濱線直通根岸線 [新橫濱] → [櫻木町]</p>
+                    <div class="mt-2 flex justify-end">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openRailMap(event)">
+                            <i class="fas fa-route"></i>
+                            <span>JR 時刻表</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4 border-l-4 border-green-400 cursor-pointer" data-day="day6">
+                    <h3 class="font-bold text-sm mb-1">Day 6 (8/17): 橫濱市區</h3>
+                    <p class="text-xs text-slate-500">紅磚倉庫 / 八景島 / Zoorasia / 大棧橋碼頭</p>
+                </div>
+                <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day7">
+                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田 → 台北</h3>
+                    <p class="text-xs text-slate-500">[ANA] NH853 HND 13:20 → TPE 15:50（第2→第1航廈）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transport Detail Modal -->
+        <div id="transport-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[200] hidden">
+            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-sm p-6 relative">
+                <button id="transport-modal-close" class="absolute right-4 top-4 text-slate-400 text-lg">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 id="transport-modal-title" class="text-lg font-bold mb-3">Day 1</h3>
+                <p id="transport-modal-body" class="text-sm text-slate-600 leading-relaxed whitespace-pre-line">
+                    This is Day 1 details
+                </p>
+            </div>
+        </div>
+
+        <!-- Shizutetsu Map Modal (touch pinch-zoom & pan enabled) -->
+        <div id="metro-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[210] hidden">
+            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-md p-4 relative">
+                <button type="button" class="absolute right-3 top-3 text-slate-400 text-lg z-10" onclick="closeMetroMap()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 class="text-sm font-bold mb-2">靜岡鐵道路線圖 <span class="text-xs font-normal text-slate-400">（雙指縮放・拖曳移動）</span></h3>
+                <div id="metro-map-viewport" class="max-h-[70vh] overflow-hidden touch-none rounded-xl bg-slate-100" style="touch-action: none;">
+                    <div id="metro-map-content" class="origin-top-left will-change-transform">
+                        <img id="metro-map-img"
+                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Shizuoka_Railway_Map.svg/800px-Shizuoka_Railway_Map.svg.png"
+                             alt="靜岡鐵道路線圖"
+                             class="block rounded-xl max-w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JR Tokaido Line Map Modal -->
+        <div id="rail-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[220] hidden">
+            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-md h-[80vh] p-4 relative flex flex-col">
+                <button type="button" class="absolute right-3 top-3 text-slate-400 text-lg" onclick="closeRailMap()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 class="text-sm font-bold mb-2 pr-8">JR 東海道本線（官方網站）</h3>
+                <div class="flex-1 overflow-hidden rounded-xl border">
+                    <iframe
+                        src="https://railway.jr-central.co.jp/timetable/"
+                        title="JR Central Timetable"
+                        class="w-full h-full border-0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ticket Detail Modal -->
+        <div id="ticket-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[230] hidden">
+            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-sm p-6 relative">
+                <button type="button" class="absolute right-4 top-4 text-slate-400 text-lg" onclick="closeTicketModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <h3 id="ticket-modal-title" class="text-lg font-bold leading-snug">Ticket</h3>
+                <p id="ticket-modal-subtitle" class="text-lg text-emerald-700 mt-1 mb-4"></p>
+                <div id="ticket-modal-content" class="space-y-3 text-sm text-slate-700"></div>
+            </div>
+        </div>
+
+        <section id="ticket" class="tab-content">
+            <div class="space-y-4">
+                <div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 1: 新幹線 → 靜岡</h3>
+                    <p class="text-xs text-slate-500 mb-3">新幹線 → 靜岡站</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day1-transport">
+                            <i class="fas fa-train text-slate-500"></i><span>交通票（新幹線）</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 2: 三保松原 + 日本平</h3>
+                    <p class="text-xs text-slate-500 mb-3">JR 清水站 / 靜鐵 日本平口站</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day2-transport">
+                            <i class="fas fa-train text-slate-500"></i><span>交通票（JR / 靜鐵）</span>
+                        </button>
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-blue-100 bg-blue-50 flex items-center justify-center gap-1" data-ticket="day2-spot">
+                            <i class="fas fa-mountain text-blue-500"></i><span>景點票（日本平纜車）</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 3: 駿府城 → 青葉通</h3>
+                    <p class="text-xs text-slate-500 mb-3">靜鐵 新靜岡站</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day3-transport">
+                            <i class="fas fa-train text-slate-500"></i><span>交通票（靜鐵）</span>
+                        </button>
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-yellow-100 bg-yellow-50 flex items-center justify-center gap-1" data-ticket="day3-spot">
+                            <i class="fas fa-landmark text-yellow-500"></i><span>景點票（駿府城）</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 4: 久能山東照宮</h3>
+                    <p class="text-xs text-slate-500 mb-3">JR 東田子の浦站 / 久能山纜車</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day4-transport">
+                            <i class="fas fa-train text-slate-500"></i><span>交通票（JR + 纜車）</span>
+                        </button>
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-orange-100 bg-orange-50 flex items-center justify-center gap-1" data-ticket="day4-spot">
+                            <i class="fas fa-torii-gate text-orange-500"></i><span>景點票（東照宮）</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 5: 靜岡 → 富士山靜岡機場</h3>
+                    <p class="text-xs text-slate-500 mb-3">機場巴士 / 計程車</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day5-transport">
+                            <i class="fas fa-bus text-slate-500"></i><span>交通票（機場巴士）</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wallet" class="tab-content">
+            <div class="card p-5 mb-6 bg-slate-50">
+                <div class="flex items-center gap-2 mb-4">
+                    <input type="number" id="manual-rate" value="0.215" step="0.001" class="w-20 p-2 text-sm font-bold text-blue-600 outline-none rounded">
+                    <span class="text-[10px] text-slate-400 uppercase tracking-wider">JPY/TWD 匯率</span>
+                </div>
+                <div class="space-y-3">
+                    <input type="text" id="calc-input" placeholder="輸入算式 (500+200*3)" class="w-full text-lg p-3 bg-white outline-none rounded-lg border border-slate-100">
+                    <div class="flex justify-between items-center">
+                        <button onclick="calculateRate()" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-xs font-bold">計算</button>
+                        <p id="calc-result" class="text-xl font-black text-blue-600">NT$ 0</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card p-5 mb-6">
+                <h3 class="font-bold text-sm mb-4">新增記帳</h3>
+                <div class="grid grid-cols-2 gap-3 mb-3">
+                    <input type="text" id="expense-name" placeholder="品項" class="bg-slate-50 p-3 text-sm border rounded">
+                    <input type="number" id="expense-amount" placeholder="日幣" class="bg-slate-50 p-3 text-sm border rounded">
+                </div>
+                <div class="flex gap-3 h-12">
+                    <label class="flex-1 flex items-center justify-center border-2 border-dashed border-slate-200 rounded-xl relative overflow-hidden text-slate-400 text-xs">
+                        <i class="fas fa-camera mr-2"></i> 上傳
+                        <input type="file" accept="image/*" id="expense-img" class="hidden" onchange="handleImage(this)">
+                        <img id="img-preview" class="absolute inset-0 w-full h-full object-cover hidden">
+                    </label>
+                    <button onclick="addExpense()" class="bg-slate-900 text-white px-6 rounded-xl"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div id="expense-list" class="space-y-3"></div>
+        </section>
+
+        <section id="lists" class="tab-content">
+            <div class="card p-5 mb-6">
+                <h3 class="font-bold mb-4 text-sm flex items-center gap-2"><i class="fas fa-check-circle text-blue-500"></i> 行前檢查</h3>
+                <div id="checklist" class="space-y-2"></div>
+            </div>
+            <div class="card p-5">
+                <h3 class="font-bold mb-4 text-sm">個人備忘錄</h3>
+                <textarea id="memo-input" class="w-full h-32 bg-slate-50 p-4 text-xs outline-none mb-3 rounded-xl" placeholder="記事..."></textarea>
+                <div id="memo-links" class="flex flex-wrap gap-2 mb-3"></div>
+                <button onclick="saveMemo()" class="w-full bg-slate-900 text-white py-3 rounded-xl text-xs font-bold">儲存</button>
+            </div>
+        </section>
+
+        <section id="info" class="tab-content">
+            <div class="card p-5 mb-6 bg-red-50 border-red-100">
+                <h3 class="font-bold text-red-600 mb-3 text-sm">緊急聯絡</h3>
+                <div class="text-xs space-y-2">
+                    <p class="flex justify-between"><span>飯店名稱</span><b>HOTEL（待填）</b></p>
+                    <p class="flex justify-between"><span>飯店地址</span><b>（待填）</b></p>
+                    <p class="pt-2 border-t border-red-100 text-[10px]">（待填）</p>
+                </div>
+            </div>
+            <div class="card p-5">
+                <h3 class="font-bold mb-3 text-sm text-slate-600">實用資訊</h3>
+                <div class="space-y-3">
+                    <a href="https://www.jma.go.jp/" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">日本氣象廳預報 <i class="fas fa-external-link-alt ml-1"></i></a>
+                    <a href="https://www.jnto.go.jp/emergency/chc/do_travel_insurance05.html" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">東京海上日動旅遊保險入口<i class="fas fa-external-link-alt ml-1"></i></a>
+                    <a href="https://rich01.com/japan-travel-insurance/" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">Mr. 市場先生申請說明<i class="fas fa-external-link-alt ml-1"></i></a>
+                    <a href="https://tokiomarinenichido.jp/zh-hant/tokio-omotenashi-policy-app/?srsltid=AfmBOop5_7CA_zJYqYyjbrRfj-U33zNbdxAqVm6fo_Uk9EIXkjFGrGTY" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">TOKIO OMOTENASHI POLICY 如何聯繫保險公司<i class="fas fa-external-link-alt ml-1"></i></a>
+                    <div class="p-3 bg-slate-50 rounded-lg text-[11px] leading-relaxed">
+                        • 免稅規定：一般物品及消耗品需滿 ¥5000<br>
+                        • 禁帶物品：肉類製品、鮮果嚴禁回台<br>
+                        • 靜岡名產：綠茶、橘、櫻蝦、金目鯛
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <nav class="fixed bottom-0 left-0 right-0 glass-nav z-[100] safe-area-bottom">
+        <div class="max-w-md mx-auto flex justify-around items-center h-16">
+            <button onclick="showTab('plan', this)" class="nav-item flex flex-col items-center gap-1 text-blue-600">
+                <i class="fas fa-calendar-day text-lg"></i>
+                <span class="text-[8px] font-bold">PLAN</span>
+            </button>
+            <button onclick="showTab('transport', this)" class="nav-item flex flex-col items-center gap-1 text-slate-400">
+                <i class="fas fa-train text-lg"></i>
+                <span class="text-[8px] font-bold">TRANS</span>
+            </button>
+            <button onclick="showTab('ticket', this)" class="nav-item flex flex-col items-center gap-1 text-slate-400">
+                <i class="fas fa-ticket-alt text-lg"></i>
+                <span class="text-[8px] font-bold">TICKET</span>
+            </button>
+            <button onclick="showTab('wallet', this)" class="nav-item flex flex-col items-center gap-1 text-slate-400">
+                <i class="fas fa-yen-sign text-lg"></i>
+                <span class="text-[8px] font-bold">WALLET</span>
+            </button>
+            <button onclick="showTab('lists', this)" class="nav-item flex flex-col items-center gap-1 text-slate-400">
+                <i class="fas fa-list-check text-lg"></i>
+                <span class="text-[8px] font-bold">LISTS</span>
+            </button>
+            <button onclick="showTab('info', this)" class="nav-item flex flex-col items-center gap-1 text-slate-400">
+                <i class="fas fa-info-circle text-lg"></i>
+                <span class="text-[8px] font-bold">INFO</span>
+            </button>
+        </div>
+    </nav>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="shizuoka.js"></script>
+</body>
+</html>
