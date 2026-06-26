@@ -88,7 +88,7 @@ function deleteEx(id) {
     renderExpenses();
 }
 
-const defaultList = ["護照", "網卡/eSIM", "行動電源", "VJW QR", "日幣現金"];
+const defaultList = ["護照", "國際駕照", "網卡/eSIM", "行動電源", "VJW QR Code", "日幣現金", "IC 卡（Suica）"];
 function renderChecklist() {
     let list = JSON.parse(localStorage.getItem('shizuoka_check')) || defaultList.map(t => ({t, c: false}));
     const container = document.getElementById('checklist');
@@ -129,13 +129,20 @@ function initRouteMap() {
     }).addTo(routeMap);
     
     const locations = [
-        { lat: 34.9714, lng: 138.3884, name: '靜岡站/市區', color: 'blue' },
-        { lat: 34.9772, lng: 138.3831, name: '駿府城公園', color: 'blue' },
-        { lat: 34.9642, lng: 138.4228, name: '日本平', color: 'orange' },
-        { lat: 34.9978, lng: 138.5289, name: '三保松原', color: 'blue' },
+        { lat: 35.6284, lng: 139.7387, name: '台場', color: 'blue' },
+        { lat: 35.6094, lng: 139.7302, name: '品川・天王洲', color: 'blue' },
+        { lat: 34.9714, lng: 138.3884, name: '靜岡站', color: 'blue' },
+        { lat: 35.4978, lng: 138.7556, name: '田貫湖', color: 'orange' },
+        { lat: 35.3153, lng: 138.6214, name: '富士宮', color: 'orange' },
+        { lat: 34.9978, lng: 138.5289, name: '三保之松原', color: 'blue' },
         { lat: 35.0153, lng: 138.4967, name: '清水港', color: 'blue' },
-        { lat: 34.6358, lng: 138.9478, name: '久能山東照宮', color: 'orange' },
-        { lat: 34.7962, lng: 138.1872, name: '富士山靜岡機場', color: 'blue' }
+        { lat: 35.4437, lng: 139.6380, name: '橫濱・櫻木町', color: 'blue' },
+        { lat: 35.4545, lng: 139.6311, name: 'Cosmoworld', color: 'blue' },
+        { lat: 35.4567, lng: 139.6325, name: 'World Porters', color: 'blue' },
+        { lat: 35.4658, lng: 139.6223, name: '橫濱站・JOINUS', color: 'blue' },
+        { lat: 35.4430, lng: 139.6450, name: '日ノ出町', color: 'orange' },
+        { lat: 35.3394, lng: 139.6103, name: '八景島', color: 'orange' },
+        { lat: 35.4950, lng: 139.3628, name: 'Zoorasia', color: 'orange' }
     ];
     
     locations.forEach(loc => {
@@ -167,13 +174,13 @@ window.onload = () => {
 };
 
 const dayDetails = {
-    day1: '【航班】\n1）ANA NH852\n2）TPE 第1航廈 13:30 → HND 第2航廈 17:45\n\n【抵達後】\n1）前往品川住宿\n2）東橫INN 東京品川港南口天王洲島\n\n【市區】\n1）台場',
-    day2: '【交通手段】\n1）JR 東海道新幹線（光芒號 Hikari）\n2）[品川] → [靜岡]\n\n【班次】\n1）14:10 發車 / 15:02 抵達（約 52 分）\n\n【抵達後】\n1）靜岡車站\n2）住宿：靜岡站南靜鐵酒店 Prezio',
-    day3: '【交通手段】\n1）自駕\n\n【行程】\n1）田貫湖\n2）白絲瀑布\n3）富士宮\n4）富士山遺產中心',
-    day4: '【交通手段】\n1）大眾交通\n\n【行程】\n1）清水港・魚市場\n2）S-Pulse Dream Plaza\n3）小丸子樂園\n4）三保之松原',
-    day5: '【交通手段】\n1）JR 東海道新幹線\n2）[靜岡] → [新橫濱站]\n3）JR 橫濱線直通根岸線\n4）[新橫濱站] → [櫻木町站]\n\n【行程】\n1）靜岡車站模型店\n2）住宿：橫濱櫻木町 JR 東日本大都會高級酒店',
-    day6: '【交通手段】\n1）橫濱市區大眾交通\n\n【行程】\n1）橫濱紅磚倉庫\n2）八景島海島樂園\n3）橫濱動物園 Zoorasia\n4）大棧橋碼頭',
-    day7: '【航班】\n1）ANA NH853\n2）HND 第2航廈 13:20 → TPE 第1航廈 15:50\n\n【出發小提醒】\n1）建議預留充足時間從橫濱前往羽田機場'
+    day1: '【航班】\nANA NH852\nTPE 第1航廈 13:30 → HND 第2航廈 17:45\n\n【機場→品川】\n1）東京單軌電車 [羽田] → [天王洲島]（約 20 分）\n2）京急線 [羽田] → [品川]（約 25 分，19:31 起約 10 分鐘一班，可用 IC 卡）\n3）接駁車 [品川] → [東橫INN 品川港南口天王洲島]（約 10 分）\n   ※ JR 品川站港南口 → 電扶梯下樓 →「富士蕎麥」右轉 → 大路邊等接駁車\n\n【住宿】\n東橫INN 東京品川港南口天王洲島\nCheck-in 15:00 / 含早餐\n\n【行程】\n周邊逛逛、台場\n\n【餐食】\n早：Home / 午：飛機 / 晚：常喜房・Mitsuboshi・TAKA',
+    day2: '【上午・台場】\n1）臨海線（りんかい線）[天王洲] → [東京テレポート]（約 5 分）\n2）台場 DiverCity（鋼彈變身 11:00 / 13:00 / 15:00 / 17:00）\n3）臨海線 [東京テレポート] → [天王洲] 回飯店\n4）接駁車 [東橫INN] → [品川] 拿行李\n\n【新幹線】\n東海道新幹線 光芒號 Hikari\n[品川] → [靜岡] 16:10 發 / 17:02 抵（約 52 分）\n備選：回聲號 Kodama 16:34 發 / 17:47 抵（約 1h3m）\n\n【住宿】\n靜鐵 Prezio 飯店 靜岡站南\nCheck-in 15:00 / 不含早餐\n\n【餐食】\n早：飯店 / 午：台場 DiverCity / 晚：靜岡車站',
+    day3: '【交通手段】\n自駕（需國際駕照）\n\n【行程】\n1）田貫湖\n2）白絲瀑布\n3）富士宮\n4）富士山遺產中心\n\n【住宿】\n靜鐵 Prezio 飯店 靜岡站南\n\n【餐食】\n早：飯店 / 午：富士宮炒麵',
+    day4: '【交通手段】\n大眾交通（T08 巴士路線待確認）\n\n【行程】\n1）JR 東海道本線 [靜岡] → [清水站]（約 15 分）\n2）巴士? [清水站] → [三保之松原]\n3）清水港・魚市場（船）\n4）S-Pulse Dream Plaza / 小丸子樂園（走路）\n5）免費接駁巴士 [Dream Plaza] → [清水站]\n6）JR [清水站] → [靜岡]（約 15 分）\n\n【備註】\n原方案：水上巴士 [江尻] ↔ [三保] 亦可參考\n\n【餐食】\n早：便利商店 / 午：清水港魚市場 / 晚：Dream Plaza',
+    day5: '【上午】\nCheck Out，行李放飯店\n靜岡 HOBBY SQUARE（模型店）\n回飯店拿行李\n\n【新幹線】\n東海道新幹線 光芒號 Hikari\n[靜岡] → [新橫濱] 15:41 發 / 16:24 抵（約 45 分）\n備選：回聲號 Kodama 15:56 發 / 16:59 抵（約 1hr）\n\n【橫濱】\nJR 橫濱/根岸線 [新橫濱] → [櫻木町]（約 15 分）\n※ 搭大船行/磯子行/櫻木町行，避開東神奈川・橫濱（需轉車）\n※ 若班次不順，改搭地鐵藍線\n出站走路至飯店，休息後去野毛町晚餐\n\n【住宿】\n橫濱櫻木町 JR 東日本大都會高級酒店\nCheck-in 15:00 / 不含早餐\n\n【餐食】\n早：便利商店 / 午：靜岡車站 / 晚：野毛町',
+    day6: '【交通手段】\nJR 根岸線 + 走路\n\n【行程】\n1）JR 根岸線 [櫻木町] → [橫濱] JOINUS Shopping\n2）JR 根岸線 [橫濱] → [櫻木町] 回飯店放東西、休息\n3）走路 飯店 → Cosmoworld（約 15 分）\n4）走路 Cosmoworld → World Porters（約 3 分）\n   2F 扭蛋 / RF 夜景\n5）走路 World Porters → 飯店（約 3 分）\n\n【餐食】\n早：櫻木町站內 / 午：JOINUS / 晚：World Porters\n\n【備選景點】\n八景島 / Zoorasia / 大棧橋 / 冰川丸 / MITSUI OUTLET',
+    day7: '【前往機場】\n1）走路 飯店 → 日ノ出町駅\n2）京急線 機場特急 [日ノ出町] → [羽田]（約 30 分）\n\n【備案】\nJR 根岸線 [櫻木町] → [橫濱]\n→ 京急線 [日ノ出町] → [羽田]\n\n【航班】\nANA NH853\nHND 第2航廈 13:20 → TPE 第1航廈 15:50\n\n【提醒】\n1）建議預留充足時間前往羽田\n2）起飛前 48 至 3 小時可免費選座'
 };
 
 function initTransportModal() {
@@ -393,88 +400,103 @@ function closeRailMap() {
 }
 
 const ticketDetails = {
-    'day1-transport': {
-        title: 'Day 1 交通票：新幹線 → 靜岡站',
+    'day2-shinkansen': {
+        title: 'Day 2 新幹線：品川 → 靜岡',
         sections: [
             {
-                title: '',
-                adult: '¥（可填入新幹線大人票價）',
-                child: '¥（可填入新幹線小孩票價）'
-            }
-        ]
-    },
-    'day2-transport': {
-        title: 'Day 2 交通票：JR 清水線 / 靜鐵',
-        sections: [
-            {
-                title: 'JR 靜岡站 ↔ 清水站',
-                adult: '¥（可填入大人來回票價）',
-                child: '¥（可填入小孩來回票價）'
+                title: '光芒號 Hikari（約 46–52 分）',
+                adult: '¥6,410（約 NT$1,282）',
+                child: '¥3,200（約 NT$640）'
             },
             {
-                title: '靜鐵 新靜岡站 ↔ 日本平口站',
-                adult: '¥（可填入大人來回票價）',
-                child: '¥（可填入小孩來回票價）'
-            }
-        ]
-    },
-    'day2-spot': {
-        title: 'Day 2 景點票：日本平纜車',
-        sections: [
+                title: '回聲號 Kodama（約 1h3m）',
+                adult: '¥6,410（約 NT$1,282）',
+                child: '¥3,200（約 NT$640）'
+            },
             {
-                title: '',
-                adult: '¥（可填入日本平纜車大人票價）',
-                child: '¥（可填入日本平纜車小孩票價）'
-            }
-        ]
-    },
-    'day3-transport': {
-        title: 'Day 3 交通票：靜岡市區',
-        sections: [
-            {
-                title: '靜鐵 靜岡站 ↔ 新靜岡站',
-                adult: '¥（可填入大人來回票價）',
-                child: '¥（可填入小孩來回票價）'
-            }
-        ]
-    },
-    'day3-spot': {
-        title: 'Day 3 景點票：駿府城公園',
-        sections: [
-            {
-                title: '',
-                adult: '免費（外圍參觀）',
-                child: '免費'
+                title: 'Platt Kodama 早鳥優惠',
+                adult: '9折 / 7折 / 6折（指定席+送飲料，不可更改）',
+                child: '同大人折扣'
             }
         ]
     },
     'day4-transport': {
-        title: 'Day 4 交通票：久能山東照宮',
+        title: 'Day 4 交通票：三保・清水',
         sections: [
             {
-                title: 'JR 靜岡站 ↔ 東田子の浦站 + 纜車',
-                adult: '¥（可填入大人單程 / 來回票價）',
-                child: '¥（可填入小孩單程 / 來回票價）'
+                title: 'JR 靜岡站 ↔ 清水站',
+                adult: '¥（IC 卡或單程票）',
+                child: '¥（IC 卡或單程票）'
+            },
+            {
+                title: '巴士? 清水站 ↔ 三保之松原（T08 待確認）',
+                adult: '¥（待確認）',
+                child: '¥（待確認）'
+            },
+            {
+                title: '清水港船 / 水上巴士',
+                adult: '¥（現場購票）',
+                child: '¥（現場購票）'
+            },
+            {
+                title: 'Dream Plaza 免費接駁巴士',
+                adult: '免費',
+                child: '免費'
             }
         ]
     },
     'day4-spot': {
-        title: 'Day 4 景點票：久能山東照宮',
+        title: 'Day 4 景點票：小丸子樂園',
         sections: [
             {
-                title: '',
-                adult: '¥500（可填入大人門票）',
-                child: '¥200（可填入小孩門票）'
+                title: 'S-Pulse Dream Plaza 小丸子樂園',
+                adult: '¥（官網查詢）',
+                child: '¥（官網查詢）'
             }
         ]
     },
-    'day5-transport': {
-        title: 'Day 5 交通票：靜岡 → 機場',
+    'day5-shinkansen': {
+        title: 'Day 5 新幹線：靜岡 → 新橫濱',
         sections: [
             {
-                title: '',
-                adult: '¥（可填入機場巴士 / 計程車大人票價）',
-                child: '¥（可填入機場巴士 / 計程車小孩票價）'
+                title: '光芒號 Hikari（約 45 分）',
+                adult: '¥（依實際購票）',
+                child: '¥（依實際購票）'
+            },
+            {
+                title: '回聲號 Kodama（約 1hr）',
+                adult: '¥（依實際購票）',
+                child: '¥（依實際購票）'
+            }
+        ]
+    },
+    'day5-jr': {
+        title: 'Day 5 交通票：新橫濱 → 櫻木町',
+        sections: [
+            {
+                title: 'JR 橫濱/根岸線 [新橫濱] → [櫻木町]',
+                adult: '¥（IC 卡）',
+                child: '¥（IC 卡）'
+            },
+            {
+                title: '備案：市營地下鐵藍線 [新橫濱] → [櫻木町]',
+                adult: '¥（IC 卡）',
+                child: '¥（IC 卡）'
+            }
+        ]
+    },
+    'day7-keikyu': {
+        title: 'Day 7 交通票：橫濱 → 羽田',
+        sections: [
+            {
+                title: '京急線 機場特急 [日ノ出町] → [羽田]',
+                adult: '¥（IC 卡，約 30 分）',
+                child: '¥（IC 卡）'
+            },
+            {
+                title: '備案：JR 根岸線 + 京急',
+                adult: '¥（IC 卡）',
+                child: '¥（IC 卡）'
             }
         ]
     }
