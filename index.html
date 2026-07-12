@@ -36,8 +36,9 @@
                 <div class="mb-6 relative z-10">
                     <div class="flex justify-between items-end">
                         <div>
-                            <p class="text-3xl font-bold tracking-tighter">TPE</p>
+                            <p class="text-3xl font-bold tracking-tighter">TSA</p>
                             <p class="text-[10px] opacity-60">13:30 NH852</p>
+							<p class="text-[10px] opacity-60">Terminal_1</p>
                         </div>
                         <div class="flex-1 flex flex-col items-center px-4 mb-2">
                             <p class="text-[10px] font-bold mb-1 text-blue-300">ANA</p>
@@ -48,6 +49,7 @@
                         <div class="text-right">
                             <p class="text-3xl font-bold tracking-tighter">HND</p>
                             <p class="text-[10px] opacity-60">17:45 羽田</p>
+							<p class="text-[10px] opacity-60">Terminal_2</p>
                         </div>
                     </div>
                 </div>
@@ -56,6 +58,7 @@
                         <div>
                             <p class="text-3xl font-bold tracking-tighter">HND</p>
                             <p class="text-[10px] opacity-60">13:20 NH853</p>
+							<p class="text-[10px] opacity-60">Terminal_2</p>
                         </div>
                         <div class="flex-1 flex flex-col items-center px-4 mb-2">
                             <p class="text-[10px] font-bold mb-1 text-orange-300">ANA</p>
@@ -64,8 +67,9 @@
                             </div>
                         </div>
                         <div class="text-right">
-                            <p class="text-3xl font-bold tracking-tighter">TPE</p>
+                            <p class="text-3xl font-bold tracking-tighter">TSA</p>
                             <p class="text-[10px] opacity-60">15:50 台北</p>
+							<p class="text-[10px] opacity-60">Terminal_1</p>
                         </div>
                     </div>
                 </div>
@@ -149,7 +153,7 @@
 						<p class="ml-3 text-sm text-green-600"> Hikari_光芒號 15:41（16:24 抵）</p>
 						<p class="text-[10px] text-slate-400">※ 備選：Kodama_回聲號 15:25（16:29 抵）</p>
                         <p>• <b>JR 橫濱/根岸線</b> [新橫濱] → [櫻木町]（約 15 分）</p>
-						<p class="text-[10px] text-slate-400">※ 備選：回聲號 15:56 / 地鐵藍線</p>
+						<p class="text-[10px] text-slate-400">※ 備選：地鐵藍線</p>
                         <p>• 野毛町晚餐</p>
                     
                         <div class="meal-row"><span class="meal-tag">早</span> 便利商店</div>
@@ -190,18 +194,26 @@
         <section id="transport" class="tab-content">
             <div class="space-y-4">
                 <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day1">
-                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 台北 → 羽田 → 品川</h3>
-                    <p class="text-xs text-slate-500">[ANA] NH852 TPE 13:30 → HND 17:45（第1→第2航廈）</p>
-                    <p class="text-xs text-slate-500 mt-1">[東京單軌] 羽田 → 天王洲 / [京急] 羽田 → 品川 / [接駁車] → 東橫INN</p>
+                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 羽田 → 品川</h3>
+                    <p class="text-xs text-slate-500">•[東京單軌電車] (MO11)_羽田機場T2 → (MO02)_天王洲島站</p>
+                    <p class="text-xs text-slate-500 mt-1">•[Walk] 天王洲島站 → 東橫INN</p>
+                    <div class="mt-2 flex justify-end">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportIframeModal(event, 'https://www.tokyo-monorail.co.jp/tc/guidance/index.html', '東京單軌電車（官方網站）')">
+                            <i class="fas fa-route"></i>
+                            <span>單軌電車站點</span>
+                        </button>
+                    </div>
                 </div>
+				
+				
                 <div class="card p-4 border-l-4 border-blue-400 cursor-pointer" data-day="day2">
                     <h3 class="font-bold text-sm mb-1">Day 2 (8/13): 品川 → 靜岡</h3>
-                    <p class="text-xs text-slate-500">[臨海線] 天王洲 ↔ 台場 / [新幹線] 光芒號 Hikari（約 52 分）</p>
-                    <p class="text-xs text-slate-500">[品川] → [靜岡] 16:10 發 / 17:02 抵</p>
+                    <p class="text-xs text-slate-500">•[臨海線 (りんかい線)] (天王洲) ↔ (東京テレポート) = 台場</p>
+					<p class="text-xs text-slate-500">•[新幹線] 光芒號 Hikari (品川) → (靜岡)_52 mins</p>
                     <div class="mt-2 flex justify-end">
-                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openRailMap(event)">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportImageModal(event, 'https://www.twr.co.jp/Portals/0/resources/lg/chtw/img/route_main.gif', '臨海線路線圖')">
                             <i class="fas fa-route"></i>
-                            <span>JR 時刻表</span>
+                            <span>臨海線站點</span>
                         </button>
                     </div>
                 </div>
@@ -210,34 +222,46 @@
                     <p class="text-xs text-slate-500">田貫湖 / 白絲瀑布 / 富士宮 / 富士山遺產中心</p>
                 </div>
                 <div class="card p-4 border-l-4 border-yellow-400 cursor-pointer" data-day="day4">
-                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 三保・清水（大眾交通）</h3>
-                    <p class="text-xs text-slate-500">三保之松原 / 清水港魚市場 / Dream Plaza（巴士? 待確認）</p>
-                    <div class="mt-2 flex justify-end">
-                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openMetroMap(event)">
-                            <i class="fas fa-subway"></i>
-                            <span>靜鐵路線圖</span>
+                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 清水（靜岡地區周遊券）</h3>
+					<p class="text-xs text-slate-500">•[JR東海道本線] (靜岡) → (清水站)</p>
+					<p class="text-xs text-slate-500">•[靜鐵巴士_3番_三保山の手線] (清水站) → (三保松原入口)</p>
+					<p class="text-xs text-slate-500">•[水上巴士] (三保) → (日の出) = S-Pulse Dream Plaza</p>
+					<p class="text-xs text-slate-500">•[免費接駁巴士] (Dream Plaza) → (清水站)</p>
+					<p class="text-xs text-slate-500">•[JR東海道本線] (清水站) → (靜岡)</p>
+                      <div class="mt-2 flex justify-end">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportImageModal(event, 'https://www.shimizu-cruise.co.jp/tw/assets/img/waterbus/course_map@2x.png', '水上巴士路線圖')">
+                            <i class="fas fa-ship"></i>
+                            <span>水上巴士路線圖</span>
                         </button>
                     </div>
                 </div>
                 <div class="card p-4 border-l-4 border-blue-400 cursor-pointer" data-day="day5">
                     <h3 class="font-bold text-sm mb-1">Day 5 (8/16): 靜岡 → 橫濱</h3>
-                    <p class="text-xs text-slate-500">[新幹線] [靜岡] → [新橫濱] 光芒號 15:41（16:24 抵）</p>
-                    <p class="text-xs text-slate-500">[JR 根岸線] [新橫濱] → [櫻木町]（備案：地鐵藍線）</p>
-                    <div class="mt-2 flex justify-end">
-                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openRailMap(event)">
+                    <p class="text-xs text-slate-500">•[新幹線] (靜岡) → (新橫濱) 光芒號 Hikari_43 mins</p>
+                    <p class="text-xs text-slate-500">•[JR 橫濱/根岸線] (新橫濱) → (櫻木町)</p>
+                    <div class="mt-2 flex justify-end gap-3">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportIframeModal(event, 'https://www.e-japannavi.com/trans/yo_map_yokohama.shtml', 'JR橫濱線')">
                             <i class="fas fa-route"></i>
-                            <span>JR 時刻表</span>
+                            <span>JR橫濱線</span>
+                        </button>
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportIframeModal(event, 'https://www.e-japannavi.com/trans/yo_map_negishi.shtml', 'JR根岸線')">
+                            <i class="fas fa-route"></i>
+                            <span>JR根岸線</span>
                         </button>
                     </div>
                 </div>
                 <div class="card p-4 border-l-4 border-green-400 cursor-pointer" data-day="day6">
                     <h3 class="font-bold text-sm mb-1">Day 6 (8/17): 橫濱市區</h3>
-                    <p class="text-xs text-slate-500">JOINUS Shopping / Cosmoworld / World Porters 夜景</p>
+                    <p class="text-xs text-slate-500">•[JR 根岸線] (櫻木町) ↔ (橫濱) JOINUS Shopping/飯店</p>
+					<p class="text-xs text-slate-500">•[走路] 飯店 → Cosmoworld</p>
+					<p class="text-xs text-slate-500">•[走路] Cosmoworld → World Porters</p>
+					<p class="text-xs text-slate-500">•[纜車] (運河公園站) → (櫻木町站) World Porters → 飯店</p>
                 </div>
                 <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day7">
-                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田 → 台北</h3>
-                    <p class="text-xs text-slate-500">[走路] 日ノ出町 → [京急] 機場特急 → 羽田</p>
-                    <p class="text-xs text-slate-500">[ANA] NH853 HND 13:20 → TPE 15:50（第2→第1航廈）</p>
+                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田</h3>
+                    <p class="text-xs text-slate-500">•[走路] (飯店) → (日ノ出町駅)</p>
+					<p class="text-xs text-slate-500">•[京急機場特急] (日ノ出町駅) → (羽田機場)</p>
+                    <p class="text-xs text-slate-500">•[Terminal_2] ANA NH853 HND 13:20 → TPE 15:50 (Terminal_1)</p>
                 </div>
             </div>
         </section>
@@ -255,37 +279,33 @@
             </div>
         </div>
 
-        <!-- Shizutetsu Map Modal (touch pinch-zoom & pan enabled) -->
-        <div id="metro-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[210] hidden">
-            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-md p-4 relative">
-                <button type="button" class="absolute right-3 top-3 text-slate-400 text-lg z-10" onclick="closeMetroMap()">
+        <!-- Transport Iframe Modal -->
+        <div id="transport-iframe-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[220] hidden">
+            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-md h-[80vh] p-4 relative flex flex-col">
+                <button type="button" class="absolute right-3 top-3 text-slate-400 text-lg" onclick="closeTransportIframeModal()">
                     <i class="fas fa-times"></i>
                 </button>
-                <h3 class="text-sm font-bold mb-2">靜岡鐵道路線圖 <span class="text-xs font-normal text-slate-400">（雙指縮放・拖曳移動）</span></h3>
-                <div id="metro-map-viewport" class="max-h-[70vh] overflow-hidden touch-none rounded-xl bg-slate-100" style="touch-action: none;">
-                    <div id="metro-map-content" class="origin-top-left will-change-transform">
-                        <img id="metro-map-img"
-                             src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Shizuoka_Railway_Map.svg/800px-Shizuoka_Railway_Map.svg.png"
-                             alt="靜岡鐵道路線圖"
-                             class="block rounded-xl max-w-full h-auto">
-                    </div>
+                <h3 id="transport-iframe-modal-title" class="text-sm font-bold mb-2 pr-8">交通資訊</h3>
+                <div class="flex-1 overflow-hidden rounded-xl border">
+                    <iframe
+                        id="transport-iframe-modal-frame"
+                        src="about:blank"
+                        title="Transport Info"
+                        class="w-full h-full border-0">
+                    </iframe>
                 </div>
             </div>
         </div>
 
-        <!-- JR Tokaido Line Map Modal -->
-        <div id="rail-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[220] hidden">
-            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-md h-[80vh] p-4 relative flex flex-col">
-                <button type="button" class="absolute right-3 top-3 text-slate-400 text-lg" onclick="closeRailMap()">
+        <!-- Transport Image Modal -->
+        <div id="transport-image-modal" class="fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-[220] hidden">
+            <div class="bg-white rounded-3xl shadow-2xl w-11/12 max-w-md p-4 relative">
+                <button type="button" class="absolute right-3 top-3 text-slate-400 text-lg z-10" onclick="closeTransportImageModal()">
                     <i class="fas fa-times"></i>
                 </button>
-                <h3 class="text-sm font-bold mb-2 pr-8">JR 東海道本線（官方網站）</h3>
-                <div class="flex-1 overflow-hidden rounded-xl border">
-                    <iframe
-                        src="https://railway.jr-central.co.jp/timetable/"
-                        title="JR Central Timetable"
-                        class="w-full h-full border-0">
-                    </iframe>
+                <h3 id="transport-image-modal-title" class="text-sm font-bold mb-2 pr-8">路線圖</h3>
+                <div class="max-h-[70vh] overflow-auto rounded-xl bg-slate-100">
+                    <img id="transport-image-modal-img" src="" alt="路線圖" class="block rounded-xl max-w-full h-auto">
                 </div>
             </div>
         </div>
@@ -315,7 +335,7 @@
                 </div>
                 <div class="card p-4">
                     <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 三保・清水</h3>
-                    <p class="text-xs text-slate-500 mb-3">JR 靜岡↔清水 / 巴士? / 清水港船 / 接駁巴士</p>
+                    <p class="text-xs text-slate-500 mb-3">JR 靜岡↔清水 / 靜鐵巴士 / 水上巴士 / 接駁巴士</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day4-transport">
                             <i class="fas fa-train text-slate-500"></i><span>交通票（JR / 水上巴士）</span>
@@ -449,6 +469,8 @@
                     </div>
                     <div class="p-3 bg-amber-50 rounded-lg text-[11px] leading-relaxed border border-amber-100">
                         <b>備忘：</b><br>
+						• Visti Japan Web, (!)<br>
+						• SmartEx, 7429244943 (!)<br>
                         • 鋼彈變身時間：11:00 / 13:00 / 15:00 / 17:00<br>
                         • 品川車站寄物：JR 改札內手荷物預かり所<br>
                         • 免稅：一般物品及消耗品需滿 ¥5000<br>
