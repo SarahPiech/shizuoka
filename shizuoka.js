@@ -166,7 +166,6 @@ window.onload = () => {
     document.getElementById('manual-rate').addEventListener('input', (e) => {
         document.getElementById('rate-display').innerText = e.target.value;
     });
-    initMetroMapZoom();
     
     setTimeout(() => {
         initRouteMap();
@@ -220,182 +219,53 @@ function initTransportModal() {
 
 window.addEventListener('load', initTransportModal);
 
-let metroZoom = {
-    scale: 1,
-    translateX: 0,
-    translateY: 0,
-    baseScale: 1,
-    baseTx: 0,
-    baseTy: 0,
-    lastPinchDist: 0,
-    lastCenterX: 0,
-    lastCenterY: 0,
-    lastTapTime: 0
-};
-
-function getTouchCenter(touches) {
-    const n = touches.length;
-    let x = 0, y = 0;
-    for (let i = 0; i < n; i++) {
-        x += touches[i].clientX;
-        y += touches[i].clientY;
-    }
-    return { x: x / n, y: y / n };
-}
-
-function getPinchDistance(touches) {
-    if (touches.length < 2) return 0;
-    const a = touches[0], b = touches[1];
-    return Math.hypot(b.clientX - a.clientX, b.clientY - a.clientY);
-}
-
-function applyMetroTransform() {
-    const content = document.getElementById('metro-map-content');
-    if (!content) return;
-    const { scale, translateX, translateY } = metroZoom;
-    content.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-}
-
-function initMetroMapZoom() {
-    const viewport = document.getElementById('metro-map-viewport');
-    const content = document.getElementById('metro-map-content');
-    const img = document.getElementById('metro-map-img');
-    if (!viewport || !content || !img) return;
-
-    viewport.addEventListener('touchstart', function (e) {
-        const touches = e.touches;
-        if (touches.length === 2) {
-            metroZoom.baseScale = metroZoom.scale;
-            metroZoom.baseTx = metroZoom.translateX;
-            metroZoom.baseTy = metroZoom.translateY;
-            metroZoom.lastPinchDist = getPinchDistance(touches);
-            const c = getTouchCenter(touches);
-            metroZoom.lastCenterX = c.x;
-            metroZoom.lastCenterY = c.y;
-        }
-        if (touches.length === 1) {
-            const t = touches[0];
-            metroZoom.pointerStartX = t.clientX;
-            metroZoom.pointerStartY = t.clientY;
-            metroZoom.startTx = metroZoom.translateX;
-            metroZoom.startTy = metroZoom.translateY;
-            const now = Date.now();
-            if (now - metroZoom.lastTapTime < 350) {
-                if (metroZoom.scale > 1.1) {
-                    metroZoom.scale = 1;
-                    metroZoom.translateX = 0;
-                    metroZoom.translateY = 0;
-                } else {
-                    metroZoom.scale = 2;
-                    const rect = viewport.getBoundingClientRect();
-                    metroZoom.translateX = rect.width / 2 - (t.clientX - rect.left);
-                    metroZoom.translateY = rect.height / 2 - (t.clientY - rect.top);
-                }
-                applyMetroTransform();
-                metroZoom.lastTapTime = 0;
-                return;
-            }
-            metroZoom.lastTapTime = now;
-        }
-    }, { passive: true });
-
-    viewport.addEventListener('touchmove', function (e) {
-        const touches = e.touches;
-        if (touches.length === 2) {
-            e.preventDefault();
-            const dist = getPinchDistance(touches);
-            if (metroZoom.lastPinchDist > 0) {
-                const factor = dist / metroZoom.lastPinchDist;
-                let newScale = metroZoom.baseScale * factor;
-                newScale = Math.max(0.5, Math.min(4, newScale));
-                const c = getTouchCenter(touches);
-                const dx = c.x - metroZoom.lastCenterX;
-                const dy = c.y - metroZoom.lastCenterY;
-                metroZoom.scale = newScale;
-                metroZoom.translateX = metroZoom.baseTx + dx;
-                metroZoom.translateY = metroZoom.baseTy + dy;
-                metroZoom.lastPinchDist = dist;
-                metroZoom.lastCenterX = c.x;
-                metroZoom.lastCenterY = c.y;
-                applyMetroTransform();
-            }
-        }
-        if (touches.length === 1 && metroZoom.scale > 1) {
-            e.preventDefault();
-            const dx = touches[0].clientX - (metroZoom.pointerStartX ?? touches[0].clientX);
-            const dy = touches[0].clientY - (metroZoom.pointerStartY ?? touches[0].clientY);
-            metroZoom.translateX = (metroZoom.startTx ?? metroZoom.translateX) + dx;
-            metroZoom.translateY = (metroZoom.startTy ?? metroZoom.translateY) + dy;
-            metroZoom.pointerStartX = touches[0].clientX;
-            metroZoom.pointerStartY = touches[0].clientY;
-            metroZoom.startTx = metroZoom.translateX;
-            metroZoom.startTy = metroZoom.translateY;
-            applyMetroTransform();
-        }
-    }, { passive: false });
-
-    viewport.addEventListener('touchend', function (e) {
-        if (e.touches.length < 2) {
-            metroZoom.lastPinchDist = 0;
-        }
-    }, { passive: true });
-
-    viewport.addEventListener('wheel', function (e) {
-        e.preventDefault();
-        const delta = e.deltaY > 0 ? -0.15 : 0.15;
-        let newScale = metroZoom.scale + delta;
-        newScale = Math.max(0.5, Math.min(4, newScale));
-        const rect = viewport.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        const scaleFactor = newScale / metroZoom.scale;
-        metroZoom.translateX = x - (x - metroZoom.translateX) * scaleFactor;
-        metroZoom.translateY = y - (y - metroZoom.translateY) * scaleFactor;
-        metroZoom.scale = newScale;
-        applyMetroTransform();
-    }, { passive: false });
-}
-
-function resetMetroMapZoom() {
-    metroZoom.scale = 1;
-    metroZoom.translateX = 0;
-    metroZoom.translateY = 0;
-    applyMetroTransform();
-}
-
-function openMetroMap(e) {
+function openTransportIframeModal(e, url, title) {
     if (e && e.stopPropagation) {
         e.stopPropagation();
     }
-    const modal = document.getElementById('metro-modal');
-    if (modal) {
-        resetMetroMapZoom();
+    const modal = document.getElementById('transport-iframe-modal');
+    const frame = document.getElementById('transport-iframe-modal-frame');
+    const titleEl = document.getElementById('transport-iframe-modal-title');
+    if (modal && frame && titleEl) {
+        titleEl.innerText = title;
+        frame.src = url;
         modal.classList.remove('hidden');
     }
 }
 
-function closeMetroMap() {
-    const modal = document.getElementById('metro-modal');
+function closeTransportIframeModal() {
+    const modal = document.getElementById('transport-iframe-modal');
+    const frame = document.getElementById('transport-iframe-modal-frame');
     if (modal) {
         modal.classList.add('hidden');
     }
-    resetMetroMapZoom();
+    if (frame) {
+        frame.src = 'about:blank';
+    }
 }
 
-function openRailMap(e) {
+function openTransportImageModal(e, url, title) {
     if (e && e.stopPropagation) {
         e.stopPropagation();
     }
-    const modal = document.getElementById('rail-modal');
-    if (modal) {
+    const modal = document.getElementById('transport-image-modal');
+    const img = document.getElementById('transport-image-modal-img');
+    const titleEl = document.getElementById('transport-image-modal-title');
+    if (modal && img && titleEl) {
+        titleEl.innerText = title;
+        img.src = url;
         modal.classList.remove('hidden');
     }
 }
 
-function closeRailMap() {
-    const modal = document.getElementById('rail-modal');
+function closeTransportImageModal() {
+    const modal = document.getElementById('transport-image-modal');
+    const img = document.getElementById('transport-image-modal-img');
     if (modal) {
         modal.classList.add('hidden');
+    }
+    if (img) {
+        img.src = '';
     }
 }
 
