@@ -30,7 +30,7 @@
         <section id="plan" class="tab-content active">
             <div class="mb-8 flight-card text-white p-6 rounded-[24px] shadow-xl relative overflow-hidden">
                 <div class="flex justify-between items-center mb-6 relative z-10">
-                    <span class="text-[10px] font-bold opacity-60 uppercase tracking-[0.2em]">Flight Ticket 老婆超棒 OK</span>
+                    <span class="text-[10px] font-bold opacity-60 uppercase tracking-[0.2em]">Flight Ticket</span>
                     <i class="fas fa-plane text-blue-400"></i>
                 </div>
                 <div class="mb-6 relative z-10">
@@ -87,11 +87,12 @@
                     <h3 class="font-bold text-lg">8/12 <span class="text-slate-400 text-xs ml-1">(Wed)</span></h3>
                     <p class="text-[10px] text-slate-400 mt-0.5"><i class="fas fa-hotel mr-1"></i>東橫INN 品川港南口天王洲島</p>
                     <div class="card p-4 mt-2 space-y-2 text-sm">
+					    <p>• 羽田機場行李寄櫃 (2F or 3F)</p>
+						<p>• 羽田機場T3逛逛</p>
                         <p>• <b>羽田機場到飯店 by [東京單軌電車]</b> (20 mins)</p>
-                        <p>• 羽田機場T3逛逛</p>
                         <div class="meal-row"><span class="meal-tag">早</span> Home</div>
                         <div class="meal-row"><span class="meal-tag">午</span> 飛機</div>
-                        <div class="meal-row"><span class="meal-tag">晚</span> 羽田機場</div>
+                        <div class="meal-row"><span class="meal-tag">晚</span> 羽田機場 T3</div>
                     </div>
                 </div>
                 <div>
@@ -188,10 +189,11 @@
             <div class="space-y-4">
                 <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day1">
                     <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 羽田 → 品川</h3>
-                    <p class="text-xs text-slate-500">•[東京單軌電車] (MO11)_羽田機場T2 → (MO02)_天王洲島站</p>
+					<p class="text-xs text-slate-500">•[機場接駁車] (Green Car)_羽田機場T2 [1F BusStop 9] ↔ 羽田機場T3 [1F BusStop 0]</p>
+                    <p class="text-xs text-slate-500">•[東京單軌電車_Monorail] (MO08)_羽田機場T2 → (MO02)_天王洲島站_Tennozu Isle</p>
+					<p class="text-xs text-slate-500">•「第2月台」或「濱松町」(JR山手線,東京都心方面)的指標前往第2月台候車</p>
                     <p class="text-xs text-slate-500 mt-1">•[Walk] 天王洲島站 → 東橫INN</p>
-			
-						<p class="text-[10px] text-slate-400">※ 備案1-1：京急線 [羽田機場] to [品川車站] (25 mins) </p>
+					<p class="text-[10px] text-slate-400">※ 備案1-1：京急線 [羽田機場] to [品川車站] (25 mins) </p>
 						<p class="text-[10px] text-slate-400">※ 備案1-2：飯店免費接駁車 [品川車站] to [品川東橫INN] (10 mins) </p>
 										
                     <div class="mt-2 flex justify-end">
@@ -317,7 +319,7 @@
                 <button type="button" class="absolute right-4 top-4 text-slate-400 text-lg" onclick="closeTicketModal()">
                     <i class="fas fa-times"></i>
                 </button>
-                <h3 id="ticket-modal-title" class="text-lg font-bold leading-snug">Ticket</h3>
+                <h3 id="ticket-modal-title" class="text-lg font-bold leading-snug">Meal</h3>
                 <p id="ticket-modal-subtitle" class="text-lg text-emerald-700 mt-1 mb-4"></p>
                 <div id="ticket-modal-content" class="space-y-3 text-sm text-slate-700"></div>
             </div>
@@ -326,8 +328,10 @@
         <section id="ticket" class="tab-content">
             <div class="space-y-4">
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13): 新幹線 品川 → 靜岡</h3>
-                    <p class="text-xs text-slate-500 mb-3">東海道新幹線 光芒號 / 回聲號</p>
+                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 羽田 → 品川</h3>
+                    <p class="text-xs text-slate-500 mb-3">早餐: HOME</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐: 飛機餐</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐: 五代木(Haneda Airport Garden_1F)</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day2-shinkansen">
                             <i class="fas fa-train text-slate-500"></i><span>新幹線指定席</span>
@@ -335,8 +339,10 @@
                     </div>
                 </div>
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 三保・清水</h3>
-                    <p class="text-xs text-slate-500 mb-3">JR 靜岡↔清水 / 靜鐵巴士 / 水上巴士 / 接駁巴士</p>
+                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13): 品川 → 靜岡</h3>
+                     <p class="text-xs text-slate-500 mb-3">早餐: 飯店早餐</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐:</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐:</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day4-transport">
                             <i class="fas fa-train text-slate-500"></i><span>交通票（JR / 水上巴士）</span>
@@ -347,8 +353,10 @@
                     </div>
                 </div>
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16): 新幹線 靜岡 → 新橫濱</h3>
-                    <p class="text-xs text-slate-500 mb-3">東海道新幹線 + JR 根岸線（備案：地鐵藍線）</p>
+                    <h3 class="font-bold text-sm mb-1">Day 3 (8/14): 靜岡・自駕</h3>
+                     <p class="text-xs text-slate-500 mb-3">早餐:</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐:</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐:</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day5-shinkansen">
                             <i class="fas fa-train text-slate-500"></i><span>新幹線指定席</span>
@@ -359,14 +367,54 @@
                     </div>
                 </div>
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田</h3>
-                    <p class="text-xs text-slate-500 mb-3">京急機場特急（備案：JR + 京急）</p>
+                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 靜岡・清水</h3>
+                    <p class="text-xs text-slate-500 mb-3">早餐:</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐:</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐:</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day7-keikyu">
                             <i class="fas fa-train text-slate-500"></i><span>京急機場特急</span>
                         </button>
                     </div>
                 </div>
+				
+				<div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16): 靜岡 → 新橫濱</h3>
+                     <p class="text-xs text-slate-500 mb-3">早餐:</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐:</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐:</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day7-keikyu">
+                            <i class="fas fa-train text-slate-500"></i><span>京急機場特急</span>
+                        </button>
+                    </div>
+                </div>
+				
+				<div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 6 (8/17): 橫濱 </h3>
+                    <p class="text-xs text-slate-500 mb-3">早餐:</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐:</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐:</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day7-keikyu">
+                            <i class="fas fa-train text-slate-500"></i><span>京急機場特急</span>
+                        </button>
+                    </div>
+                </div>
+				
+					<div class="card p-4">
+                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田</h3>
+                    <p class="text-xs text-slate-500 mb-3">早餐:</p>
+					 <p class="text-xs text-slate-500 mb-3">午餐:</p>
+					  <p class="text-xs text-slate-500 mb-3">晚餐:</p>
+                    <div class="grid grid-cols-2 gap-2 text-[11px]">
+                        <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day7-keikyu">
+                            <i class="fas fa-train text-slate-500"></i><span>京急機場特急</span>
+                        </button>
+                    </div>
+                </div>
+				
+				
             </div>
         </section>
 
