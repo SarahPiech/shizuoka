@@ -178,7 +178,7 @@ const dayDetails = {
     day3: '【交通手段】\n自駕（需國際駕照）\n\n【行程】\n1）田貫湖\n2）白絲瀑布\n3）富士宮\n4）富士山遺產中心\n\n【住宿】\n靜鐵 Prezio 飯店 靜岡站南\n\n【餐食】\n早：飯店 / 午：富士宮炒麵',
     day4: '【交通】\n• [JR 東海道本線] (CA17 靜岡) → (CA14 清水)（往富士／熱海方向）\n• [靜鐵巴士・3番月台・三保山之手線] (清水站) → (三保松原入口)\n• [水上巴士（三保羽衣線）] (三保) → (日の出) = S-Pulse Dream Plaza\n• [免費接駁巴士] (Dream Plaza) → (清水站)\n• [JR 東海道本線] (CA14 清水) → (CA17 靜岡)\n\n【景點】\n• 三保松原\n• S-Pulse Dream Plaza\n• 櫻桃小丸子樂園',
     day5: '【交通】\n• [東海道新幹線] (靜岡) → (新橫濱) Hikari 710 15:41（16:24 抵）\n※ 備選：Kodama 回聲號 15:56（16:59 抵）\n• [JR 橫濱／根岸線] (新橫濱) → (櫻木町)\n [O] 大船行/磯子行/櫻木町行, [X] 東神奈川, 橫濱 (因為還沒開到櫻木町, 要轉車)\n※ 備選：地鐵藍線',
-    day6: '【交通】\n• [JR 根岸線] (櫻木町 Sakuragicho) ↔ (橫濱 Yokohama) JOINUS Shopping\n• [Walk] 飯店 → Cosmoworld\n• [Walk] Cosmoworld → World Porters\n• [纜車 Yokohama Air Cabin] (運河公園站 Unga Park) → (櫻木町站 Sakuragicho)\n\n【景點】\n• JOINUS Shopping\n• Cosmoworld\n• World Porters',
+    day6: '【交通】\n• [JR 根岸線] (櫻木町 Sakuragicho) ↔ (橫濱 Yokohama) JOINUS Shopping\n• [Walk] 飯店 → Cosmoworld (搭摩天輪)\n• [Walk] Cosmoworld → World Porters\n• [纜車 Yokohama Air Cabin] (運河公園站 Unga Park) → (櫻木町站 Sakuragicho)\n\n【景點】\n• JOINUS Shopping\n• Cosmoworld\n• World Porters',
     day7: '【前往機場】\n• [Walk] 飯店 → (日ノ出町駅 Hinodecho Station)\n• [京急線・Airport Express] (KK39 日ノ出町駅 Hinodecho Station) → (KK17 羽田空港第1・第2ターミナル駅 Haneda Airport Terminal 1·2 Station)\n\n【備案】\n※ JR 根岸線 [櫻木町 Sakuragicho] → [橫濱 Yokohama] + 京急線 [橫濱 Yokohama] → [羽田機場]\n\n【航班】\n• [T2] ANA NH853 HND 13:20 → TPE 15:50 (T1)\n\n【京急車種說明】\n※ Airport Express（エアポート急行）：機場急行 (KK39只能搭這台) \n※ Limited Express（特急 Tokkyu）\n※ Limited Express（快特 Kaitoku）\n※ ICOCA 可搭乘以上一般列車'
 };
 
@@ -381,12 +381,12 @@ const ticketDetails = {
         ]
     },
     'day6-transport': {
-        title: 'Day 6 交通票：纜車 Yokohama Air Cabin',
+        title: 'Day 6 交通票：摩天輪 COSMO CLOCK 21 + 纜車 Yokohama Air Cabin (one way)',
         sections: [
             {
-                title: 'JR 橫濱/根岸線 [新橫濱] → [櫻木町]',
-                adult: '¥1,000（現場購票）',
-                child: '¥500（現場購票）'
+                title: '摩天輪 + 單程纜車 [運河公園站 Unga Park] → (櫻木町站 Sakuragicho]',
+                adult: '¥1,700（現場購票/Kkday）',
+                child: '¥1,300（現場購票/Kkday）'
             },
      
         ]
