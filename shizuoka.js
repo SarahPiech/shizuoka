@@ -295,13 +295,66 @@ const ticketDetails = {
     },
 	
 		'day2-shinkansen': {
-        title: 'Day 2 交通票： 新幹線',
+        title: 'Day 2 交通票： 新幹線 Hikari_光芒號_717 15:10（16:02 抵)',
         sections: [
      
              {
-                title: '光芒號 Hikari：品川 → 靜岡',
+                title: '品川 → 靜岡',
                 adult: '¥6,470（約 NT$1,290）',
                 child: '¥3,230（約 NT$640）'
+            },
+      
+        ]
+    },
+	
+	'day3-drive': {
+        title: 'Day 3 自駕：地址/電話',
+        sections: [
+            {
+                title: `白絲瀑布：<br>
+						富士宮市上井出273-1（白絲瀑布停車場）<br>
+						0544-54-2880/0544-27-5240<br><br>
+
+						AEON Mall Fujinomiya：<br>
+						1-8 Asamacho, Fujinomiya, Shizuoka 418-0032<br>
+						+81 544-68-7200<br><br>
+
+						富士宮本宮淺間大社：<br>
+						富士宮市宮町1-1<br>
+						0544-27-2002<br><br>
+						
+						富士山遺產中心：<br>
+						5-12 Miyacho, Fujinomiya, Shizuoka 418-0067<br>
+						+81 544-21-3776<br><br>
+						
+						田子の浦港：<br>
+						2 Maeda, Fuji, Shizuoka 417-0015<br>
+						+81 545-33-0495<br><br>					
+						`
+
+            },
+      
+        ]
+    },
+	
+	
+		'day3-highway': {
+        title: 'Day 3 自駕：路線',
+        sections: [
+            {
+                title: ` [飯店靜岡站南] to [白絲瀑布]：<br>
+						東名高速公路富士 IC  or 新東名高速公路新富士 IC<br><br>
+
+						[白絲瀑布] to [AEON富士宮]：<br>
+						国道139号<br><br>
+
+						[AEON富士宮] to [田子の浦港]：<br>
+						国道139号<br><br>
+						
+						[田子の浦港] to [飯店靜岡站南]：<br>
+						東名高速公路 or 国道1号<br><br>					
+						`
+
             },
       
         ]
@@ -343,10 +396,10 @@ const ticketDetails = {
         ]
     },
     'day5-shinkansen': {
-        title: 'Day 5 交通票： 新幹線',
+        title: 'Day 5 交通票： 新幹線 Hikari_光芒號_710 15:41（16:24 抵)',
         sections: [
             {
-				title: '光芒號 Hikari：靜岡 → 新橫濱',
+				title: '靜岡 → 新橫濱',
                 adult: '¥6,470（約 NT$1,290）',
                 child: '¥3,230（約 NT$640）'
             },
