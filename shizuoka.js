@@ -176,7 +176,7 @@ const dayDetails = {
     day1: '【交通】\n• [1F 機場接駁車] (Green Car) T2 [BusStop 9] ↔ T3 [BusStop 0]\n• [2F 東京單軌電車 Monorail] (MO08) 羽田機場第2航廈 → (MO02) 天王洲島站 Tennozu Isle\n• 「第2月台」或「濱松町（JR山手線・東京都心方面）」指標前往第2月台候車\n• [Walk] 天王洲島站 → 東橫INN\n\n【備案】\n※ 備案1-1：京急線 [羽田機場] → [品川車站]（約 25 分）\n※ 備案1-2：飯店免費接駁車 [品川車站] → [品川東橫INN]（約 10 分）',
     day2: '【交通】\n• [臨海線（りんかい線）] (天王洲) ↔ (東京テレポート) = 台場\n• [飯店接駁車] (品川東橫INN) → (JR品川站)\n• [品川站・東海道新幹線] Hikari 717 15:10 (品川) → (靜岡)（約 52 分）\n\n【備選】\n※ Kodama 回聲號 15:34 發 → 16:47 抵',
     day3: '【交通手段】\n自駕（需國際駕照）\n\n【行程】\n1）田貫湖\n2）白絲瀑布\n3）富士宮\n4）富士山遺產中心\n\n【住宿】\n靜鐵 Prezio 飯店 靜岡站南\n\n【餐食】\n早：飯店 / 午：富士宮炒麵',
-    day4: '【交通】\n• [JR 東海道本線] (CA17 靜岡) → (CA14 清水)（往富士／熱海方向）\n• [靜鐵巴士・3番月台・三保山之手線] (清水站) → (三保松原入口)\n• [水上巴士（三保羽衣線）] (三保) → (日の出) = S-Pulse Dream Plaza\n• [免費接駁巴士] (Dream Plaza) → (清水站)\n• [JR 東海道本線] (CA14 清水) → (CA17 靜岡)\n\n【景點】\n• 三保松原\n• S-Pulse Dream Plaza\n• 櫻桃小丸子樂園',
+    day4: '【交通】\n• [JR 東海道本線] (CA17 靜岡) → (CA14 清水)（往富士／熱海方向）\n• [靜鐵巴士・3番月台・三保山之手線] (清水站) → (三保松原入口)\n• [水上巴士] (水上バス 三保のりば) → (日の出) = S-Pulse Dream Plaza\n• [免費接駁巴士] (Dream Plaza) → (清水站)\n• [JR 東海道本線] (CA14 清水) → (CA17 靜岡)\n\n【景點】\n• 三保松原\n• S-Pulse Dream Plaza\n• 櫻桃小丸子樂園',
     day5: '【交通】\n• [東海道新幹線] (靜岡) → (新橫濱) Hikari 710 15:41（16:24 抵）\n※ 備選：Kodama 回聲號 15:56（16:59 抵）\n• [JR 橫濱／根岸線] (新橫濱) → (櫻木町)\n [O] 大船行/磯子行/櫻木町行, [X] 東神奈川, 橫濱 (因為還沒開到櫻木町, 要轉車)\n※ 備選：地鐵藍線',
     day6: '【交通】\n• [JR 根岸線] (櫻木町 Sakuragicho) ↔ (橫濱 Yokohama) JOINUS Shopping\n• [Walk] 飯店 → Cosmoworld (搭摩天輪)\n• [Walk] Cosmoworld → World Porters\n• [纜車 Yokohama Air Cabin] (運河公園站 Unga Park) → (櫻木町站 Sakuragicho)\n\n【景點】\n• JOINUS Shopping\n• Cosmoworld\n• World Porters',
     day7: '【前往機場】\n• [Walk] 飯店 → (日ノ出町駅 Hinodecho Station)\n• [京急線・Airport Express] (KK39 日ノ出町駅 Hinodecho Station) → (KK17 羽田空港第1・第2ターミナル駅 Haneda Airport Terminal 1·2 Station)\n\n【備案】\n※ JR 根岸線 [櫻木町 Sakuragicho] → [橫濱 Yokohama] + 京急線 [橫濱 Yokohama] → [羽田機場]\n\n【航班】\n• [T2] ANA NH853 HND 13:20 → TPE 15:50 (T1)\n\n【京急車種說明】\n※ Airport Express（エアポート急行）：機場急行 (KK39只能搭這台) \n※ Limited Express（特急 Tokkyu）\n※ Limited Express（快特 Kaitoku）\n※ ICOCA 可搭乘以上一般列車'
@@ -369,12 +369,16 @@ const ticketDetails = {
                 child: '¥120（IC 卡或單程票）'
             },
             {
-                title: '靜鐵巴士・3番月台・三保山之手線: 清水站 → 三保松原入口',
-                adult: '¥440（IC 卡或單程票)',
-                child: '¥220（IC 卡或單程票)'
+                title: `靜鐵巴士・3番月台・三保山之手線:<br><br> 
+				**清水駅前 → 三保松原入口 
+				[#57三保車庫前行き/東海大学三保水族館行き, #58世界遺産三保松原行き]; [[折戸車庫]行きはに止まりません]<br><br>
+				**[三保松原入口] → [エスパルス練習場入口] 只有往[東海大学三保水族館]的車有到練習場, 可改為搭往[三保車庫前]然後用走的去搭水上巴士(約 8mins)<br><br>
+				**備案: 回程找清水駅 (1號乘車處)（波止場フェルケール博物館・新清水駅経由）方向<br><br>
+				大人: ¥440（IC 卡或單程票)<br>
+                小孩: ¥220（IC 卡或單程票)`
             },
             {
-                title: '水上巴士: 三保 → 日の出',
+                title: '水上巴士: 水上バス 三保のりば → 日の出',
                 adult: '¥1,000（現場購票）',
                 child: '¥500（現場購票）'
             },
