@@ -211,7 +211,7 @@
         <section id="transport" class="tab-content">
             <div class="space-y-4">
                 <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day1">
-                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 羽田 → 品川</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12) Wed: 羽田 → 品川</h3>
 					<p class="text-xs text-slate-500">•[1F機場接駁車] (Green Car)_T2 [BusStop 9] ↔ T3 [BusStop 0]</p>
                     <p class="text-xs text-slate-500">•[2F東京單軌電車_Monorail] (MO08)_T3 → (MO02)_天王洲島站_Tennozu Isle</p>
 					<p class="text-xs text-slate-500">•「第2月台」或「濱松町」(JR山手線,東京都心方面)的指標前往第2月台候車</p>
@@ -229,7 +229,7 @@
 				
 				
                 <div class="card p-4 border-l-4 border-blue-400 cursor-pointer" data-day="day2">
-                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13): 品川 → 靜岡</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13) Thu: 品川 → 靜岡</h3>
                     <p class="text-xs text-slate-500">•[臨海線 (りんかい線)] (天王洲) ↔ (東京テレポート) = 台場</p>
 					<p class="text-xs text-slate-500">•[飯店接駁車] (品川東橫INN) → (JR品川站)</p>
 					<p class="text-xs text-slate-500">
@@ -244,14 +244,15 @@
                     </div>
                 </div>
                 <div class="card p-4 border-l-4 border-orange-400 cursor-pointer" data-day="day3">
-                    <h3 class="font-bold text-sm mb-1">Day 3 (8/14): 富士周邊（自駕）</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 3 (8/14) Fri: 富士周邊（自駕）</h3>
                     <p class="text-xs text-slate-500"> 白絲瀑布 / 富士宮 / 富士山遺產中心 / 田子的浦</p>
                 </div>
                 <div class="card p-4 border-l-4 border-yellow-400 cursor-pointer" data-day="day4">
-                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 清水</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15) Sat: 清水</h3>
 					<p class="text-xs text-slate-500">•[JR東海道本線] (靜岡CA17) → (清水站CA14)_往富士/熱海方向</p>
-					<p class="text-xs text-slate-500">•[靜鐵巴士_3番月台_三保山の手線] (清水站) → (三保松原入口)</p>
-					<p class="text-xs text-slate-500">•<span class="bg-green-200 px-1 rounded">[水上巴士]</span> (三保) → (日の出) = S-Pulse Dream Plaza</p>
+					<p class="text-xs text-slate-500">•[靜鐵巴士_3番月台_三保山の手線] (清水駅前) → (三保松原入口)</p>
+					<p class="text-xs text-slate-500">•[靜鐵巴士_三保山の手線] (三保松原入口) → (エスパルス練習場入口)_近水上巴士乘船處</p>
+					<p class="text-xs text-slate-500">•<span class="bg-green-200 px-1 rounded">[水上巴士_三保羽衣ライン]</span> (三保) → (日の出) = S-Pulse Dream Plaza</p>
 					<p class="text-xs text-slate-500">•[免費接駁巴士] (Dream Plaza) → (清水站)</p>
 					<p class="text-xs text-slate-500">•[JR東海道本線] (清水站) → (靜岡)</p>
                       <div class="mt-2 flex justify-end">
@@ -260,14 +261,27 @@
                             <i class="fas fa-ship"></i>
                             <span>JR東海道本線</span>
                         </button>
+	
 						<button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportImageModal(event, 'https://www.shimizu-cruise.co.jp/tw/assets/img/waterbus/course_map@2x.png', '水上巴士路線圖')">
                             <i class="fas fa-ship"></i>
                             <span>水上巴士路線圖</span>
                         </button>
+						
+						
+						<button
+						  type="button"
+						  class="text-[10px] text-blue-500 flex items-center gap-1"
+						  onclick="window.open('https://www.jorudan.co.jp/bus/rosen/stoplist/?Ddd=15&Dhh=14&Dmn=40&Dym=202608&jyosya=%E4%B8%89%E4%BF%9D%E6%9D%BE%E5%8E%9F%E5%85%A5%E5%8F%A3&lid=8286172#jump', '_blank', 'noopener,noreferrer')"
+						>
+						  <i class="fas fa-ship"></i>
+						  <span>JustLineBus_全指南</span>
+						</button>
+						
+						
                     </div>
                 </div>
                 <div class="card p-4 border-l-4 border-blue-400 cursor-pointer" data-day="day5">
-                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16): 靜岡 → 橫濱</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16) Sun: 靜岡 → 橫濱</h3>
                     <p class="text-xs text-slate-500">
 						•<span class="bg-yellow-200 px-1 rounded">[東海道新幹線]</span> (靜岡) → (新橫濱) Hikari_710 15:41（16:24 抵）
 					</p>
@@ -290,14 +304,14 @@
                     </div>
                 </div>
                 <div class="card p-4 border-l-4 border-green-400 cursor-pointer" data-day="day6">
-                    <h3 class="font-bold text-sm mb-1">Day 6 (8/17): 橫濱市區</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 6 (8/17) Mon: 橫濱市區</h3>
                     <p class="text-xs text-slate-500">•[JR 根岸線] (櫻木町) ↔ (橫濱) JOINUS Shopping/飯店</p>
 					<p class="text-xs text-slate-500">•[走路] 飯店 → Cosmoworld (搭<span class="bg-green-200 px-1 rounded">摩天輪</span>COSMO CLOCK 21)</p>
 					<p class="text-xs text-slate-500">•[走路] Cosmoworld → World Porters</p>
 					<p class="text-xs text-slate-500">•<span class="bg-green-200 px-1 rounded">[纜車]</span> (運河公園站) → (櫻木町站) World Porters 旁 = 飯店</p>
                 </div>
                 <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day7">
-                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18) Tue: 橫濱 → 羽田</h3>
                     <p class="text-xs text-slate-500">•[走路] (飯店) → (日ノ出町駅)</p>
 					<p class="text-xs text-slate-500">•[京急機場特急] (KK39_日ノ出町駅_Hinodecho Station) → (KK17_羽田空港第1・第2ターミナル駅_Haneda Airport Terminal 1·2 Station)</p>
 				    <p class="text-[10px] text-slate-400">※ 備案：JR根岸線 [櫻木町] → [橫濱] + 京急機場特急 [橫濱] → [羽田機場]</p>
@@ -373,7 +387,7 @@
         <section id="ticket" class="tab-content">
             <div class="space-y-4">
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12): 羽田 → 品川</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 1 (8/12) Wed: 羽田 → 品川</h3>
                     <p class="text-xs text-slate-500 mb-3">早餐: HOME</p>
 					 <p class="text-xs text-slate-500 mb-3">午餐: 飛機餐</p>
 					  <p class="text-xs text-slate-500 mb-3">晚餐: 五代木花山烏龍麵 (Haneda Airport Garden_1F)</p>
@@ -384,7 +398,7 @@
                     </div>
                 </div>
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13): 品川 → 靜岡</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 2 (8/13) Thu: 品川 → 靜岡</h3>
                      <p class="text-xs text-slate-500 mb-3">早餐: 飯店早餐</p>
 					 <p class="text-xs text-slate-500 mb-3">午餐: 信州蕎麥面店Soji坊_DiverCity (有兒童餐)</p>
 					 <p class="text-xs text-slate-500 mb-3">晚餐: 吳服町通り or 青葉關東煮街 [Mikawaya 三河屋]</p>
@@ -399,10 +413,11 @@
                     </div>
                 </div>
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 3 (8/14): 靜岡・自駕</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 3 (8/14) Fri: 靜岡・自駕</h3>
                      <p class="text-xs text-slate-500 mb-3">早餐: 靜岡車站_茶泡飯 えん (外帶飯糰) 8am 開始營業</p>
 					 <p class="text-xs text-slate-500 mb-3">午餐: AEON_Sugakiya_菅木屋拉麵 2F (有兒童餐/軟冰淇淋)</p>
 					  <p class="text-xs text-slate-500 mb-3">晚餐: 靜岡車站_石松餃子_ASTY</p>
+					  <p class="text-xs text-slate-500 mb-3">(備案: Kintoki（金とき）昭和町店_漢堡排老店)</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day3-drive">
                             <i class="fas fa-train text-slate-500"></i><span>自駕_地址/電話</span>
@@ -413,9 +428,10 @@
                     </div>
                 </div>
                 <div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15): 靜岡・清水</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 4 (8/15) Sat: 靜岡・清水</h3>
                     <p class="text-xs text-slate-500 mb-3">早餐: 靜岡車站_Little Mermaid (麵包)</p>
-					 <p class="text-xs text-slate-500 mb-3">午餐: 三保の松源_まぐろダイニング はぐるま_鮪魚定食</p>
+					 <p class="text-xs text-slate-500 mb-3">TBA</p>
+					 <p class="text-xs text-slate-500 mb-3">(備案: 三保の松源_まぐろダイニング はぐるま_鮪魚定食)</p>
 					  <p class="text-xs text-slate-500 mb-3">晚餐: Dream Plaza_かつ丼屋勝急 (炸豬排)</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day4-transport">
@@ -429,7 +445,7 @@
                 </div>
 				
 				<div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16): 靜岡 → 新橫濱</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 5 (8/16) Sun: 靜岡 → 新橫濱</h3>
                      <p class="text-xs text-slate-500 mb-3">早餐: 便利商店</p>
 					 <p class="text-xs text-slate-500 mb-3">午餐: 靜岡車站ASTY麥當勞</p>
 					  <p class="text-xs text-slate-500 mb-3">晚餐: 二代目 ぐるめ亭 CIAL桜木町店_迴轉壽司 or Sushimazume Noge Main Branch_壽司居酒屋</p>
@@ -445,7 +461,7 @@
                 </div>
 				
 				<div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 6 (8/17): 橫濱 </h3>
+                    <h3 class="font-bold text-sm mb-1">Day 6 (8/17) Mon: 橫濱 </h3>
                     <p class="text-xs text-slate-500 mb-3">早餐: Café Andersen CIAL Sakuragicho</p>
 					 <p class="text-xs text-slate-500 mb-3">午餐: 勝烈庵_豬排 (JOINUS or 馬車道總本店); 阿夫利拉麵 (JOINUS)</p>
 					  <p class="text-xs text-slate-500 mb-3">晚餐: kitchen jo's cial桜木町店 or 鎌倉Pasta_World Porter</p>
@@ -460,7 +476,7 @@
                 </div>
 				
 					<div class="card p-4">
-                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18): 橫濱 → 羽田</h3>
+                    <h3 class="font-bold text-sm mb-1">Day 7 (8/18) Tue: 橫濱 → 羽田</h3>
                     <p class="text-xs text-slate-500 mb-3">早餐: 便利商店</p>
 					 <p class="text-xs text-slate-500 mb-3">午餐: T2_麥當勞 (B1)</p>
 					  <p class="text-xs text-slate-500 mb-3">晚餐: HOME</p>
