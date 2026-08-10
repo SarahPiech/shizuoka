@@ -119,7 +119,7 @@
 						</p>
 						<p>• <span class="bg-yellow-200 px-1 rounded">2:30pm 品川站新幹線機台取票</span></p>
                         <p>• <b><span class="bg-yellow-200 px-1 rounded">[品川車站搭新幹線]</span>(Shinagawa) to (Shizuoka) </b></p>
-						<p class="ml-3 text-sm text-green-600"> Hikari_光芒號_717 15:10（16:02 抵）</p>
+						<p class="ml-3 text-sm text-green-600"> Hikari_光芒號_717 15:10（16:02 抵）<br>Car 14_20D.20E.19D.19E </p>
 				        <p>• [Walk] (JR靜岡車站) to (靜鐵飯店南口) </b></p>
 						<p>• 靜岡車站周邊</p>
                         <div class="meal-row"><span class="meal-tag">早</span> 飯店</div>
@@ -168,7 +168,7 @@
 						<p>• 走路回飯店取行李, 車站搭新幹線</p>
 						<p>•<span class="bg-yellow-200 px-1 rounded">3:00pm 靜岡站站新幹線機台取票</span></p>
 					    <p>• <b><span class="bg-yellow-200 px-1 rounded">[新幹線]</span>(Shizuoka) → (Shin-Yokohama) </b> </p>
-						<p class="ml-3 text-sm text-green-600"> Hikari_光芒號_710 15:41（16:24 抵）</p>
+						<p class="ml-3 text-sm text-green-600"> Hikari_光芒號_710 15:41（16:24 抵）<br>Car 15_1A.1B.2A.2B</p>
                         <p>• 飯店 (櫻木町) by [JR 橫濱/根岸線]（15 mins）</p>			
                         <p>• 野毛町晚餐_Aki?</p>
                     
@@ -201,11 +201,11 @@
 					
 						<p class="text-orange-600 font-bold">• <b>方案一</b></p>
                         <p>• <b>JR根岸線 [櫻木町] → [橫濱] (4 mins)</b></p>
-                        <p>• <b>京急電鐵空港線 [橫濱(KK37)] → [羽田機場(KK17)] (30 mins)</b></p><br>
+                        <p>• <b>京急電鐵 [橫濱(KK37)] → [羽田機場(KK17)] (30 mins)</b></p><br>
 					
 					<p class="text-orange-600 font-bold">• <b>方案二</b></p>
                         <p>• [飯店] → [日ノ出町駅] by [walk] (11 mins)</p>
-                        <p>• [日ノ出町駅(KK39)] → [羽田機場(KK17)] by [京急電鐵空港線] (35 mins) </p><br>
+                        <p>• [日ノ出町駅(KK39)] → [羽田機場(KK17)] by [京急電鐵] (35 mins) </p><br>
                         <p>• Terminal 2_Departure 3F</p>
 						<p>• ANA NH853 HND 13:20 → TPE 15:50</p>
 
@@ -267,6 +267,7 @@
                             <i class="fas fa-ship"></i>
                             <span>JR東海道本線</span>
                         </button>
+
 	
 						<button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportImageModal(event, 'https://www.shimizu-cruise.co.jp/tw/assets/img/waterbus/course_map@2x.png', '水上巴士路線圖')">
                             <i class="fas fa-ship"></i>
@@ -319,15 +320,28 @@
                 <div class="card p-4 border-l-4 border-slate-700 cursor-pointer" data-day="day7">
                     <h3 class="font-bold text-sm mb-1">Day 7 (8/18) Tue: 橫濱 → 羽田</h3>
                     <p class="text-xs text-slate-500">•JR根岸線 [櫻木町] → [橫濱]</p>
-					<p class="text-xs text-slate-500">•京急電鐵空港線 [橫濱_KK37] → [羽田機場_KK17]</p>
+					<p class="text-xs text-slate-500">•京急電鐵_京急本線 + 空港線 [橫濱_KK37] → [羽田機場_KK17]</p>
 					<p class="text-xs text-slate-500">•[羽田機場T2] ANA NH853 HND 13:20 → TPE 15:50 [松山機場T1]</p>
 				    <p class="text-[10px] text-slate-400">※ 備案：[走路] (飯店) → (日ノ出町駅) + (KK39_日ノ出町駅_Hinodecho Station) → (KK17_羽田空港第1・第2ターミナル駅_Haneda Airport Terminal 1·2 Station)</p>
 
 					     <div class="mt-2 flex justify-end gap-3">
-                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportIframeModal(event, 'https://alchetron.com/cdn/keiky-main-line-9d25ad1d-ca7a-4e6e-84d6-cb66c8e4c09-resize-750.gif', '京急電鐵空港線')">
+                        <button type="button" class="text-[10px] text-blue-500 flex items-center gap-1" onclick="openTransportIframeModal(event, 'https://alchetron.com/cdn/keiky-main-line-9d25ad1d-ca7a-4e6e-84d6-cb66c8e4c09-resize-750.gif', '京急電鐵')">
                             <i class="fas fa-route"></i>
-                            <span>京急電鐵空港線</span>
+                            <span>京急電鐵</span>
                         </button>
+						
+						<button
+						  type="button"
+						  class="text-[10px] text-blue-500 flex items-center gap-1"
+						  onclick="window.open('https://norikae.keikyu.co.jp/transit/norikae/N3?USR=PC&uid=2164ipp&dir=18&path=20260810153718987&sf=3260-%89%A1%95%6C&st=2821-%89%48%93%63%8B%F3%8D%60%91%E6%82%50%81%45%91%E6%82%51%83%5E%81%5B%83%7E%83%69%83%8B&pn=3&date=20260818&time=0930&sr=0&ep=1&rp=0&tp=0&ft=0000000007ea03322a4307ea03322a600cbc0000005302e5073d0000005302ed08010000005501300b050000&fm=2&osf=%89%A1%95%6C&ost=%89%48%93%63%8B%F3%8D%60%91%E6%82%50%81%45%91%E6%82%51%83%5E%81%5B%83%7E%83%69%83%8B&rsf=%89%A1%95%6C&rst=%89%48%93%63%8B%F3%8D%60%91%E6%82%50%81%45%91%E6%82%51%83%5E%81%5B%83%7E%83%69%83%8B', '_blank', 'noopener,noreferrer')"
+						>
+						  <i class="fas fa-ship"></i>
+						  <span>京急電鐵時刻表_Target Blank</span>
+						</button>
+						
+						
+						
+						
                     </div>
 					
 					
@@ -491,7 +505,7 @@
 					  <p class="text-xs text-slate-500 mb-3">晚餐: HOME</p>
                     <div class="grid grid-cols-2 gap-2 text-[11px]">
                         <button type="button" class="ticket-item px-2 py-2 rounded-lg border border-slate-200 flex items-center justify-center gap-1" data-ticket="day7-keikyu">
-                            <i class="fas fa-train text-slate-500"></i><span>京急電鐵空港線</span>
+                            <i class="fas fa-train text-slate-500"></i><span>京急電鐵</span>
                         </button>
                     </div>
                 </div>
@@ -588,7 +602,7 @@
                     <a href="https://japantravel.navitime.com/zh-tw/" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium">NAVITIME 日本交通查詢 <i class="fas fa-external-link-alt ml-1"></i></a>
                     <a href="https://www.toyoko-inn.com/china/campaign/pickup/shinagawa1/" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium">東橫INN 品川接駁車 <i class="fas fa-external-link-alt ml-1"></i></a>
                     <a href="https://timetables.jreast.co.jp/2607/timetable/tt0888/0888041.html" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium">JR 橫濱/根岸線時刻表 <i class="fas fa-external-link-alt ml-1"></i></a>
-                    <a href="https://www.haneda-tokyo-access.com/tc/ride/train-line-map.html" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium">京急線路線圖（羽田） <i class="fas fa-external-link-alt ml-1"></i></a>
+                    <a href="https://www.haneda-tokyo-access.com/tc/ride/train-line-map.html" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium">京急電鐵路線圖（羽田） <i class="fas fa-external-link-alt ml-1"></i></a>
                     <a href="https://www.jma.go.jp/" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">日本氣象廳預報 <i class="fas fa-external-link-alt ml-1"></i></a>
                     <a href="https://www.jnto.go.jp/emergency/chc/do_travel_insurance05.html" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">東京海上日動旅遊保險入口<i class="fas fa-external-link-alt ml-1"></i></a>
                     <a href="https://rich01.com/japan-travel-insurance/" target="_blank" class="block p-3 bg-slate-50 rounded-lg text-xs font-medium text-center">東京海上日動旅遊保險教學<i class="fas fa-external-link-alt ml-1"></i></a>
