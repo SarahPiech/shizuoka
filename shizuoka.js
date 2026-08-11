@@ -175,7 +175,7 @@ window.onload = () => {
 const dayDetails = {
     day1: '【交通】\n• [1F 機場接駁車] (Green Car) T2 [BusStop 9] ↔ T3 [BusStop 0]\n• [2F 東京單軌電車 Monorail] (MO08) 羽田機場第2航廈 → (MO02) 天王洲島站 Tennozu Isle\n• 「第2月台」或「濱松町（JR山手線・東京都心方面）」指標前往第2月台候車\n• [Walk] 天王洲島站 → 東橫INN\n\n【備案】\n※ 備案1-1：京急線 [羽田機場] → [品川車站]（約 25 分）\n※ 備案1-2：飯店免費接駁車 [品川車站] → [品川東橫INN]（約 10 分）',
     day2: '【交通】\n• [臨海線（りんかい線）] (天王洲) ↔ (東京テレポート) = 台場\n• [飯店接駁車] (品川東橫INN) → (JR品川站)\n• [品川站・東海道新幹線] Hikari 717 15:10 (品川) → (靜岡)（約 52 分）\n\n【備選】\n※ Kodama 回聲號 15:34 發 → 16:47 抵',
-    day3: '【交通手段】\n自駕（需國際駕照）\n\n【行程】\n1）田貫湖\n2）白絲瀑布\n3）富士宮\n4）富士山遺產中心\n\n【住宿】\n靜鐵 Prezio 飯店 靜岡站南\n\n【餐食】\n早：飯店 / 午：富士宮炒麵',
+    day3: '【交通手段】\n自駕（需國際駕照）\n\n【行程】\n1）富士山樂座\n2）白絲瀑布\n3）富士宮\n4）富士山遺產中心\n\n【住宿】\n靜鐵 Prezio 飯店 靜岡站南\n\n【餐食】\n早：飯店 / 午：富士宮炒麵',
     day4: '【交通】\n• [JR 東海道本線] (CA17 靜岡) → (CA14 清水)（往富士／熱海方向）\n• [靜鐵巴士・3番月台・三保山之手線] (清水站) → (三保松原入口)\n• [水上巴士] (水上バス 三保のりば) → (日の出) = S-Pulse Dream Plaza\n• [免費接駁巴士] (Dream Plaza) → (清水站)\n• [JR 東海道本線] (CA14 清水) → (CA17 靜岡)\n\n【景點】\n• 三保松原\n• S-Pulse Dream Plaza\n• 櫻桃小丸子樂園',
     day5: '【交通】\n• [東海道新幹線] (靜岡) → (新橫濱) Hikari 710 15:41（16:24 抵）\n※ 備選：Kodama 回聲號 15:56（16:59 抵）\n• [JR 橫濱／根岸線] (新橫濱) → (櫻木町)\n [O] 大船行/磯子行/櫻木町行, [X] 東神奈川, 橫濱 (因為還沒開到櫻木町, 要轉車)\n※ 備選：地鐵藍線',
     day6: '【交通】\n• [JR 根岸線] (櫻木町 Sakuragicho) ↔ (橫濱 Yokohama) JOINUS Shopping\n• [Walk] 飯店 → Cosmoworld (搭摩天輪)\n• [Walk] Cosmoworld → World Porters\n• [纜車 Yokohama Air Cabin] (運河公園站 Unga Park) → (櫻木町站 Sakuragicho)\n\n【景點】\n• JOINUS Shopping\n• Cosmoworld\n• World Porters',
@@ -312,25 +312,38 @@ const ticketDetails = {
         sections: [
             {
                 title: `白絲瀑布：<br>
-						富士宮市上井出273-1（白絲瀑布停車場）<br>
+						富士宮市上井出273-1(白絲瀑布停車場）<br>
+						<span style="background-color: yellow;">MAPCODE：72 820 177*48 </span><br>
 						0544-54-2880/0544-27-5240<br><br>
 
 						AEON Mall Fujinomiya：<br>
-						1-8 Asamacho, Fujinomiya, Shizuoka 418-0032<br>
+						静岡県富士宮市浅間町1番8号<br>
+						<span style="background-color: yellow;">MAPCODE：72 493 113*74 </span><br>
 						+81 544-68-7200<br><br>
 
 						富士宮本宮淺間大社：<br>
 						富士宮市宮町1-1<br>
+						<span style="background-color: yellow;">MAPCODE：72 493 827*66 </span><br>
 						0544-27-2002<br><br>
 						
 						富士山遺產中心：<br>
-						5-12 Miyacho, Fujinomiya, Shizuoka 418-0067<br>
+						富士宮市宮町5-12<br>
+						<span style="background-color: yellow;">MAPCODE：72 493 403*28 </span><br>
 						+81 544-21-3776<br><br>
 						
 						田子の浦港：<br>
-						2 Maeda, Fuji, Shizuoka 417-0015<br>
-						+81 545-33-0495<br><br>					
+						静岡県富士市鈴川町2-1<br>
+						<span style="background-color: yellow;">MAPCODE：72 203 716*28 </span><br>
+						+81 545-33-0495<br><br>	
+						
+						<a href="https://www.mapion.co.jp/" target="_blank" 
+						
+						  style="color: #1976d2; text-decoration: underline;"
+						
+						>Mapcode</a>
+					
 						`
+					
 
             },
       
